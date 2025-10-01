@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/infosys-milestone-1/static/css/main.1e792601.css",
-    "main.js": "/infosys-milestone-1/static/js/main.e9ef8916.js",
+    "main.js": "/infosys-milestone-1/static/js/main.3f3bba40.js",
     "index.html": "/infosys-milestone-1/index.html",
     "main.1e792601.css.map": "/infosys-milestone-1/static/css/main.1e792601.css.map",
-    "main.e9ef8916.js.map": "/infosys-milestone-1/static/js/main.e9ef8916.js.map"
+    "main.3f3bba40.js.map": "/infosys-milestone-1/static/js/main.3f3bba40.js.map"
   },
   "entrypoints": [
     "static/css/main.1e792601.css",
-    "static/js/main.e9ef8916.js"
+    "static/js/main.3f3bba40.js"
   ]
 }
