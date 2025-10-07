@@ -1,83 +1,87 @@
 import React, { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import "./Dashboard.css";
 
 function ApplyPage() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [coverLetter, setCoverLetter] = useState("");
-  const [bid, setBid] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    proposal: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Proposal submitted for project:", id, {
-      coverLetter,
-      bid,
-    });
-    alert("✅ Proposal submitted successfully (demo)");
-    navigate("/freelancer-dashboard");
+    alert("✅ Proposal submitted successfully!");
+    console.log("Submitted data:", formData);
   };
 
   return (
-    <div className="dashboard-container">
-      <h2 className="dashboard-title">✍️ Apply to Project #{id}</h2>
-      <p className="dashboard-subtitle">
-        Write a short proposal and your bid amount.
-      </p>
+    <div style={{ textAlign: "center", padding: "50px" }}>
+      <h2>📄 Apply for this Project</h2>
+      <p>Fill in your details and proposal below to apply.</p>
 
-      <div style={{ maxWidth: 700, margin: "0 auto", textAlign: "left" }}>
-        <form onSubmit={handleSubmit}>
-          <label>Cover Letter</label>
-          <textarea
-            value={coverLetter}
-            onChange={(e) => setCoverLetter(e.target.value)}
-            rows="6"
-            style={{
-              width: "100%",
-              padding: 12,
-              marginBottom: 12,
-              borderRadius: 8,
-              border: "1px solid #ccc",
-            }}
-            required
-          />
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          margin: "0 auto",
+          maxWidth: "400px",
+          textAlign: "left",
+          backgroundColor: "#fff",
+          padding: "20px",
+          borderRadius: "10px",
+          boxShadow: "0px 2px 8px rgba(0,0,0,0.1)",
+        }}
+      >
+        <label style={{ fontWeight: "bold" }}>Name:</label>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+          placeholder="Enter your name"
+          required
+          style={{ width: "100%", margin: "10px 0", padding: "8px" }}
+        />
 
-          <label>Your Bid (USD)</label>
-          <input
-            type="text"
-            value={bid}
-            onChange={(e) => setBid(e.target.value)}
-            placeholder="e.g. 1200"
-            style={{
-              width: "100%",
-              padding: 10,
-              marginBottom: 12,
-              borderRadius: 8,
-              border: "1px solid #ccc",
-            }}
-            required
-          />
+        <label style={{ fontWeight: "bold" }}>Email:</label>
+        <input
+          type="email"
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          placeholder="Enter your email"
+          required
+          style={{ width: "100%", margin: "10px 0", padding: "8px" }}
+        />
 
-          <div style={{ display: "flex", gap: 12 }}>
-            <button className="dashboard-btn" type="submit">
-              Submit Proposal
-            </button>
-            <button
-              type="button"
-              style={{
-                padding: "10px 16px",
-                borderRadius: 8,
-                border: "1px solid #ccc",
-                background: "#fff",
-                cursor: "pointer",
-              }}
-              onClick={() => navigate(-1)}
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      </div>
+        <label style={{ fontWeight: "bold" }}>Proposal:</label>
+        <textarea
+          name="proposal"
+          value={formData.proposal}
+          onChange={handleChange}
+          placeholder="Write your proposal..."
+          required
+          style={{ width: "100%", margin: "10px 0", padding: "8px", height: "100px" }}
+        />
+
+        <button
+          type="submit"
+          style={{
+            backgroundColor: "#007bff",
+            color: "white",
+            padding: "10px 15px",
+            border: "none",
+            borderRadius: "5px",
+            cursor: "pointer",
+            width: "100%",
+          }}
+        >
+          Submit Proposal
+        </button>
+      </form>
     </div>
   );
 }

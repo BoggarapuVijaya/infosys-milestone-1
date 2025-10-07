@@ -1,10 +1,8 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
 
 function ProjectsPage() {
-  const navigate = useNavigate();
-
   const projects = [
     {
       id: 1,
@@ -29,31 +27,24 @@ function ProjectsPage() {
     },
   ];
 
-  function handleApply(projectId) {
-    // navigate to apply form route for this project
-    navigate(`/projects/${projectId}/apply`);
-  }
-
   return (
-    <div className="dashboard-container">
-      <h2 className="dashboard-title">📁 Projects</h2>
-      <p className="dashboard-subtitle">
-        Explore available projects and apply for the ones that suit you best.
-      </p>
+    <div className="dashboard">
+      <h2>📁 Projects</h2>
+      <p>Explore available projects and apply for the ones that suit you best.</p>
 
       <div className="dashboard-cards">
         {projects.map((project) => (
-          <div className="dashboard-card" key={project.id}>
+          <div key={project.id} className="dashboard-card">
             <h3>{project.title}</h3>
             <p><strong>Client:</strong> {project.client}</p>
             <p><strong>Budget:</strong> {project.budget}</p>
             <p><strong>Deadline:</strong> {project.deadline}</p>
-            <button
-              className="dashboard-btn"
-              onClick={() => handleApply(project.id)}
-            >
-              Apply Now
-            </button>
+
+            {/* ✅ This is the updated Apply Now button */}
+            <Link to={`/projects/1/apply`}>
+            <button>Apply Now</button>
+</Link>
+
           </div>
         ))}
       </div>
