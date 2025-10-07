@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; //  Import Link
 import "./Auth.css"; // for styling
 
 function RegisterPage() {
@@ -32,7 +33,7 @@ function RegisterPage() {
 
   return (
     <div className="auth-container">
-      <h2>Register</h2>
+      <h2> Register</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -57,6 +58,21 @@ function RegisterPage() {
         />
         <button type="submit">Register</button>
       </form>
+
+      {/*  Login link below Register button */}
+      <p style={{ marginTop: "15px", fontSize: "14px", textAlign: "center" }}>
+        Already have an account?{" "}
+        <Link
+          to="/login"
+          style={{
+            color: "#007bff",
+            textDecoration: "none",
+            fontWeight: "bold",
+          }}
+        >
+          Login here
+        </Link>
+      </p>
     </div>
   );
 }

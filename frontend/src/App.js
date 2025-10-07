@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <div style={{ padding: "20px" }}>
-        <h2>🔑 My App</h2>
+        <h2>Freelancer App</h2>
         <nav>
           <Link to="/" style={{ marginRight: "10px" }}>Home</Link>
           <Link to="/register" style={{ marginRight: "10px" }}>Register</Link>
