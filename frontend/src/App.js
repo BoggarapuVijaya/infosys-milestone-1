@@ -9,6 +9,7 @@ import ProjectsPage from "./pages/ProjectsPage";
 import ApplyPage from "./pages/ApplyPage";
 import "./pages/Auth.css";
 
+
 function App() {
   return (
     <Router basename="/infosys-milestone-1">
