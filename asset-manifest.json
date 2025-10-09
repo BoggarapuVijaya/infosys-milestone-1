@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/infosys-TalentLink/static/css/main.d77d07d4.css",
-    "main.js": "/infosys-TalentLink/static/js/main.525710dc.js",
+    "main.js": "/infosys-TalentLink/static/js/main.cc392265.js",
     "index.html": "/infosys-TalentLink/index.html",
     "main.d77d07d4.css.map": "/infosys-TalentLink/static/css/main.d77d07d4.css.map",
-    "main.525710dc.js.map": "/infosys-TalentLink/static/js/main.525710dc.js.map"
+    "main.cc392265.js.map": "/infosys-TalentLink/static/js/main.cc392265.js.map"
   },
   "entrypoints": [
     "static/css/main.d77d07d4.css",
-    "static/js/main.525710dc.js"
+    "static/js/main.cc392265.js"
   ]
 }
