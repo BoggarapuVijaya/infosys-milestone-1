@@ -9,17 +9,22 @@ function FreelancerDashboard() {
     <div className="container">
       {/* ✅ Sidebar */}
       <div className="sidebar">
-        {/* 🔹 Profile section removed */}
-
         <div
           className="nav-item"
           onClick={() => navigate("/freelancer-dashboard")}
         >
           📊 Dashboard
         </div>
+
         <div className="nav-item" onClick={() => navigate("/projects")}>
           📁 Projects
         </div>
+
+        {/* ✅ Newly added sidebar item */}
+        <div className="nav-item" onClick={() => navigate("/projects-search")}>
+          🔍 Find Projects
+        </div>
+
         <div className="nav-item">💰 Invoices</div>
         <div className="nav-item">📈 Reports</div>
       </div>
